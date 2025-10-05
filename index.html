@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn to Tell Time</title>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+// COPY THE ENTIRE CODE FROM "time-learning-app" ARTIFACT HERE
+// For now, this is a working landing page
+const { useState } = React;
+
+function TimeApp() {
+  const [userName, setUserName] = useState('');
+  
+  return (
+    <div style={{minHeight:'100vh',background:'linear-gradient(135deg,#9333ea,#ec4899,#3b82f6)',display:'flex',alignItems:'center',justifyContent:'center',padding:'20px'}}>
+      <div style={{background:'white',borderRadius:'30px',padding:'50px',maxWidth:'600px',textAlign:'center',boxShadow:'0 20px 60px rgba(0,0,0,0.3)'}}>
+        <div style={{fontSize:'100px',marginBottom:'20px'}}>⏰</div>
+        <h1 style={{fontSize:'48px',background:'linear-gradient(135deg,#9333ea,#ec4899)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',marginBottom:'20px',fontWeight:'bold'}}>Learn to Tell Time!</h1>
+        <p style={{fontSize:'24px',color:'#666',marginBottom:'30px'}}>A fun app for kids aged 3-6!</p>
+        
+        <div style={{background:'linear-gradient(to right,#fef3c7,#fed7aa)',padding:'24px',borderRadius:'16px',marginBottom:'32px',border:'4px solid #fbbf24'}}>
+          <div style={{fontSize:'40px',marginBottom:'12px'}}>🎙️</div>
+          <p style={{fontSize:'20px',color:'#1f2937',fontWeight:'600'}}>Today you will be learning to tell time! There will be a tutorial to teach you, and a quiz to test what you learned.</p>
+        </div>
+
+        <input 
+          type="text" 
+          value={userName}
+          onChange={(e)=>setUserName(e.target.value)}
+          placeholder="Enter your name here..."
+          style={{width:'100%',padding:'20px',fontSize:'24px',border:'4px solid #a855f7',borderRadius:'16px',textAlign:'center',marginBottom:'24px',boxSizing:'border-box'}}
+        />
+        
+        <button 
+          onClick={()=>alert('Full app loading! Upload complete code to enable all features.')}
+          disabled={!userName.trim()}
+          style={{width:'100%',padding:'24px',fontSize:'32px',background:userName.trim()?'linear-gradient(to right,#9333ea,#ec4899)':'#d1d5db',color:'white',border:'none',borderRadius:'16px',fontWeight:'bold',cursor:userName.trim()?'pointer':'not-allowed'}}
+        >
+          🚀 Continue
+        </button>
+        
+        <div style={{marginTop:'32px',background:'#fef3c7',padding:'16px',borderRadius:'12px'}}>
+          <p style={{color:'#666'}}><strong>🎯 Tip:</strong> Make sure your sound is on to hear the instructions!</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.render(<TimeApp />, document.getElementById('root'));
+</script>
+</body>
+</html>
